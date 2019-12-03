@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Electronic open lab website</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+      body{
+        background-color: grey;
+
+      }
+      table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+
+}
+th,td {
+  padding: 5px;
+}
+option{
+  background-color:lightgreen;
+}
+a{
+  color:white;
+}
+
+       </style>
+       <!--the script that call the php file-->
+       <script>
+function showUser(str) {
+  if (str == "") {
+      document.getElementById("txtHint").innerHTML = "";
+      return;
+  } else {
+      if (window.XMLHttpRequest) {
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp = new XMLHttpRequest();
+      } else {
+          // code for IE6, IE5
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("txtHint").innerHTML = this.responseText;
+          }
+      };
+      xmlhttp.open("GET","getuser.php?q="+str,true);
+      xmlhttp.send();
+  }
+}
+</script>
+  </head>
+  <body>
+    <header>
+
+<nav style="height:" class="navbar bg-success ">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="https://www.cput.ac.za/">
+    <img src="CPUT3.png" alt="logo" style="width:200px;">
+  </a>
+  <div style="float:right;" class="input-group-text" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit"><i class="material-icons" style="font-size:15px;">search</i></button>
+  </div>
+</nav>
+
+  <!-- Links -->
+  <nav style="margin-top:2px;margin-bottom:2px;height:22px;" class="navbar navbar-expand-sm bg-success  ">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a style="color:white;"  class="nav-link" href="index.html"><i class="material-icons">&#xe88a;</i></a>
+    </li>
+    <li class="nav-item">
+      <a style="color:white;" class="nav-link" href="about.html">About</a>
+    </li>
+    <li class="nav-item">
+      <a style="color:white;" class="nav-link" href="contactus.html">Contact</a>
+    </li>
+    <li class="nav-item">
+      <a style="color:white;" class="nav-link" href="Serviceweb.html">Back to Services</a>
+    </li>
+    <li class="nav-item">
+      <a style="color:white;" class="nav-link" href="https://www.cput.ac.za/">CPUT WebSite</a>
+    </li>
+  </ul>
+
+</nav>
+      </header>
+      <nav style="height:40px;" class="navbar navbar-expand-sm bg-success navbar-dark ">
+        <div  class="container">
+
+          <form >
+            <select name="users" onchange="showUser(this.value)">
+              <option value="">Select a Component</option>
+              <option value="1"> Relay 12v DC 6A</option>
+              <option value="2">Relay 5v DC 1A</option>
+              <option value="3">0.5 INCH JACK PLUG</option>
+              <option value="4">1.5V AA BATTERY</option>
+              <option value="5">1.5V AAA BATTERY</option>
+              <option value="6">9V  BATTERY</option>
+              <option value="7">9V  BATTERY CLIP</option>
+              <option value="8">Banana Sokects Female Red Black Green</option>
+              <option value="9">Banana Sokects Male Red Black Green</option>
+              <option value="10">Breadboards</option>
+              <option value="11">Bushes</option>
+              <option value="12">Crocodile Clips Red&Black</option>
+              <option value="13">DB25 Casing</option>
+              <option value="14">DB25 Male&Female</option>
+              <option value="15">DB9 Casing</option>
+              <option value="16">DB9 Male&Female</option>
+              <option value="17">Dip Switch</option>
+              <option value="18">Ferite Core</option>
+              <option value="19">Fuse Holder 20mm</option>
+              <option value="20">Fuse Holder 30mm</option>
+              <option value="21">Fuse Holder PCB Mount</option>
+              <option value="22">Fuses</option>
+              <option value="23">Nobs</option>
+              <option value="24">Poly Fuses 0.5A </option>
+              <option value="25">PTM Push Button </option>
+              <option value="26">RCA Female Black&Red</option>
+              <option value="27">RCA Male Black&Red</option>
+              <option value="28">Rubber Grommits</option>
+              <option value="29">Tubles Spacers </option>
+              <option value="30">Switch DPDT</option>
+              <option value="31">Switch Rotart</option>
+              <option value="32">T0220 Heatsink</option>
+              <option value="33">T03 Silicon</option>
+              <option value="34">T03P Silicon</option>
+              <option value="35">Copper Wire 1m</option>
+              <option value="36">Copper Wire 1/2m</option>
+              <option value="37">Scubby Wire</option>
+              <option value="38">Clip on Heatsinks</option>
+              <option value="39">2Ways ICs Strip</option>
+              <option value="40">Dig1 Components Pack</option>
+              <option value="41">Dig2 Components Pack</option>
+              <option value="42">Elet1 Comp Pack</option>
+              <option value="43">Elect2 Comp Pack</option>
+              <option value="44">Veroboard   </option>
+              <option value="45">Con Blocks 2 Way</option>
+              <option value="46">Con Blocks 2 Way</option>
+              <option value="">REGULATORS</option>
+              <option value="47">REGULATORS 7805</option>
+              <option value="48">REGULATORS 7905</option>
+              <option value="49">REGULATORS LM317</option>
+              <option value="50">REGULATORS LM337</option>
+              <option value="51">REGULATORS 7906</option>
+              <option value="52">REGULATORS 7908</option>
+              <option value="53">REGULATORS 7909</option>
+              <option value="54">REGULATORS 7910</option>
+              <option value="55">REGULATORS 7912</option>
+              <option value="56">REGULATORS 7915</option>
+              <option value="57">REGULATORS 7924</option>
+              <option value="58">REGULATORS 7806</option>
+              <option value="59">REGULATORS 7808</option>
+              <option value="60">REGULATORS 7809</option>
+              <option value="61">REGULATORS 7810</option>
+              <option value="62">REGULATORS 7812</option>
+              <option value="63">REGULATORS 7815</option>
+              <option value="64">REGULATORS 7824</option>
+              <option value="">TRANSISTORS</option>
+              <option value="65">TRANSISTORS 2N2219</option>
+              <option value="66">TRANSISTORS 2N2222</option>
+              <option value="67">TRANSISTORS 2N2904</option>
+              <option value="68">TRANSISTORS 2N2905</option>
+              <option value="69">TRANSISTORS 2N2907</option>
+              <option value="70">TRANSISTORS 2N3702</option>
+              <option value="71">TRANSISTORS 2N3705</option>
+              <option value="72">TRANSISTORS 2N3819</option>
+              <option value="73">TRANSISTORS 2N3823</option>
+              <option value="74">TRANSISTORS 2N3904</option>
+              <option value="75">TRANSISTORS 2N3906</option>
+              <option value="76">TRANSISTORS 2N6027</option>
+              <option value="77">TRANSISTORS 2N6028</option>
+              <option value="78">TRANSISTORS 2SB861</option>
+              <option value="79">TRANSISTORS 2SB867</option>
+              <option value="80">TRANSISTORS BC107</option>
+              <option value="81">TRANSISTORS BC212</option>
+              <option value="82">TRANSISTORS BC214</option>
+              <option value="83">TRANSISTORS BC237A</option>
+              <option value="84">TRANSISTORS BC309</option>
+              <option value="85">TRANSISTORS BC550C</option>
+              <option value="86">TRANSISTORS BC560C</option>
+              <option value="87">TRANSISTORS BCY70</option>
+              <option value="88">TRANSISTORS BD139</option>
+              <option value="89">TRANSISTORS BD140</option>
+              <option value="90">TRANSISTORS BD244C</option>
+              <option value="91">TRANSISTORS BD680 </option>
+              <option value="92">TRANSISTORS BF240</option>
+              <option value="93">TRANSISTORS BF245B</option>
+              <option value="94">TRANSISTORS BF256B</option>
+              <option value="95">TRANSISTORS BF258</option>
+              <option value="96">TRANSISTORS BF469</option>
+              <option value="97">TRANSISTORS BF470</option>
+              <option value="98">TRANSISTORS BU406</option>
+              <option value="99">TRANSISTORS C5048</option>
+              <option value="100">TRANSISTORS C547</option>
+              <option value="101">TRANSISTORS C9106</option>
+              <option value="102">TRANSISTORS J148</option>
+              <option value="103">TRANSISTORS TIP2955</option>
+              <option value="104">TRANSISTORS TIP29C</option>
+              <option value="105">TRANSISTORS TIP3055</option>
+              <option value="106">TRANSISTORS TIP31C</option>
+              <option value="107">TRANSISTORS TIP32C</option>
+              <option value="108">TRANSISTORS TS357A </option>
+              <option value="109">TRANSISTORS ZTX313</option>
+              <option value="">MOSFETS</option>
+              <option value="110">MOSFETS IRFP2113</option>
+              <option value="111">MOSFETS IRFP2117</option>
+              <option value="112">MOSFETS IRFP450</option>
+              <option value="113">MOSFETS IRFP530</option>
+              <option value="114">MOSFETS IRFP540</option>
+              <option value="115">MOSFETS IRFP640</option>
+              <option value="116">MOSFETS IRFP9260</option>
+              <option value="117">MOSFETS IRFP9280</option>
+              <option value="">DIODES</option>
+              <option value="118">DIODES .-0647 </option>
+              <option value="119">DIODES 1N4007</option>
+              <option value="120">DIODES 1N4148 </option>
+              <option value="121">DIODES 1N5408</option>
+              <option value="122">DIODES 1N914</option>
+              <option value="123">DIODES SEGEMENT COMMON ANODE</option>
+              <option value="124">DIODES SEGEMENT COMMON CATHODE</option>
+              <option value="125">DIODES 1A BRIDGE</option>
+              <option value="126">DIODES BI-COLOUR LED</option>
+              <option value="127">DIODES BR104 10A BRIDGE</option>
+              <option value="128">DIODES FB3510 35A BRIDGE</option>
+              <option value="129">DIODES BYV27-200</option>
+              <option value="130">DIODES BYV28-200</option>
+              <option value="131">DIODES BYV-95C</option>
+              <option value="132">DIODES DIAC 33V</option>
+              <option value="133">DIODES FLASHING LED</option>
+              <option value="134">DIODES LED3MM BLUE</option>
+              <option value="135">DIODES LED3MM RED/GREEN/AMBER</option>
+              <option value="136">DIODES LED5MM BLUE</option>
+              <option value="137">DIODES LED5MM RED/GREEN/AMBER </option>
+              <option value="138">DIODES LED HOLDER 3&5MM</option>
+              <option value="139">DIODES RS605 6A BRIDGE</option>
+              <option value="140">DIODES SCR L4003MT</option>
+              <option value="141">DIODES SCR S106M1</option>
+              <option value="142">DIODES TRIAC IT615</option>
+              <option value="143">DIODES W04 0.5A BRIDGE</option>
+              <option value="144">2.7V ZENER DIODES 300MW BRIDGE</option>
+              <option value="145">3.3V ZENER DIODES 300MW BRIDGE</option>
+              <option value="146">3.6V ZENER DIODES 300MW BRIDGE</option>
+              <option value="147">3.9V ZENER DIODES 300MW BRIDGE</option>
+              <option value="148">4.3V ZENER DIODES 300MW BRIDGE</option>
+              <option value="149">4.7V ZENER DIODES 300MW BRIDGE</option>
+              <option value="150">5.1V ZENER DIODES 300MW BRIDGE</option>
+              <option value="151">5.6V ZENER DIODES 300MW BRIDGE</option>
+              <option value="152">6.2V ZENER DIODES 300MW BRIDGE</option>
+              <option value="153">6.8V ZENER DIODES 300MW BRIDGE</option>
+              <option value="154">7.5V ZENER DIODES 300MW BRIDGE</option>
+              <option value="155">8.2V ZENER DIODES 300MW BRIDGE</option>
+              <option value="156">9.1V ZENER DIODES 300MW BRIDGE</option>
+              <option value="157">10V ZENER DIODES 300MW BRIDGE</option>
+              <option value="158">11V ZENER DIODES 300MW BRIDGE</option>
+              <option value="159">12V ZENER DIODES 300MW BRIDGE</option>
+              <option value="160">13V ZENER DIODES 300MW BRIDGE</option>
+              <option value="161">15V ZENER DIODES 300MW BRIDGE</option>
+              <option value="162">16V ZENER DIODES 300MW BRIDGE</option>
+              <option value="163">18V ZENER DIODES 300MW BRIDGE</option>
+              <option value="164">20V ZENER DIODES 300MW BRIDGE</option>
+              <option value="165">22V ZENER DIODES 300MW BRIDGE</option>
+              <option value="166">24V ZENER DIODES 300MW BRIDGE</option>
+              <option value="167">27V ZENER DIODES 300MW BRIDGE</option>
+              <option value="168">30V ZENER DIODES 300MW BRIDGE</option>
+              <option value="">CAPACITORS</option>
+              <option value="169">CAPACITORS 10PF</option>
+              <option value="170">CAPACITORS 12P</option>
+              <option value="171">CAPACITORS 15PF</option>
+              <option value="172">CAPACITORS 18PF</option>
+              <option value="173">CAPACITORS 22PF</option>
+              <option value="174">CAPACITORS 27PF</option>
+              <option value="175">CAPACITORS 33PF</option>
+              <option value="176">CAPACITORS 39PF</option>
+              <option value="177">CAPACITORS 47PF</option>
+              <option value="178">CAPACITORS 56PF</option>
+              <option value="179">CAPACITORS 68PF</option>
+              <option value="180">CAPACITORS 82PF</option>
+              <option value="181">CAPACITORS 100PF</option>
+              <option value="182">CAPACITORS 120PF</option>
+              <option value="183">CAPACITORS 150PF</option>
+              <option value="184">CAPACITORS 180PF</option>
+              <option value="185">CAPACITORS 220PF</option>
+              <option value="186">CAPACITORS 270PF</option>
+              <option value="187">CAPACITORS 330PF</option>
+              <option value="188">CAPACITORS 390PF</option>
+              <option value="189">CAPACITORS 470PF</option>
+              <option value="190">CAPACITORS 560PF</option>
+              <option value="191">CAPACITORS 680PF</option>
+              <option value="192">CAPACITORS 820PF</option>
+              <option value="193">CAPACITORS 1nF</option>
+              <option value="194">CAPACITORS 1.2nF</option>
+              <option value="195">CAPACITORS 1.5nF</option>
+              <option value="196">CAPACITORS 1.8nF</option>
+              <option value="197">CAPACITORS 2.2nF</option>
+              <option value="198">CAPACITORS 2.7nF</option>
+              <option value="199">CAPACITORS 3.3nF</option>
+              <option value="200">CAPACITORS 3.9nF</option>
+              <option value="201">CAPACITORS 4.7nF</option>
+              <option value="202">CAPACITORS 5.6nF</option>
+              <option value="203">CAPACITORS 6.8nF</option>
+              <option value="204">CAPACITORS 8.2nF</option>
+              <option value="205">CAPACITORS 10nF</option>
+              <option value="206">CAPACITORS 12nF</option>
+              <option value="207">CAPACITORS 15nF</option>
+              <option value="208">CAPACITORS 18nF</option>
+              <option value="209">CAPACITORS 22nF</option>
+              <option value="210">CAPACITORS 27nF</option>
+              <option value="211">CAPACITORS 33nF</option>
+              <option value="212">CAPACITORS 39nF</option>
+              <option value="213">CAPACITORS 47nF</option>
+              <option value="214">CAPACITORS 56nF</option>
+              <option value="215">CAPACITORS 68nF</option>
+              <option value="216">CAPACITORS 82nF</option>
+              <option value="217">CAPACITORS 100nF</option>
+              <option value="218">CAPACITORS 100nF elec</option>
+              <option value="219">CAPACITORS 120nF</option>
+              <option value="220">CAPACITORS 150nF</option>
+              <option value="221">CAPACITORS 180nF</option>
+              <option value="222">CAPACITORS 220nF</option>
+              <option value="223">CAPACITORS 270nF</option>
+              <option value="224">CAPACITORS 390nF</option>
+              <option value="225">CAPACITORS 470nF</option>
+              <option value="226">CAPACITORS 560nF</option>
+              <option value="227">CAPACITORS 680nF</option>
+              <option value="228">CAPACITORS 680nF tant</option>
+              <option value="229">CAPACITORS 820nF</option>
+              <option value="249">CAPACITORS 330nF</option>
+              <option value="230">CAPACITORS 1uF</option>
+              <option value="231">CAPACITORS 2.2uF</option>
+              <option value="232">CAPACITORS 3.3uF </option>
+              <option value="233">CAPACITORS 4.7uF </option>
+              <option value="234">CAPACITORS 6.8uF </option>
+              <option value="235">CAPACITORS 10uF </option>
+              <option value="236">CAPACITORS 15uF </option>
+              <option value="237">CAPACITORS 22uF </option>
+              <option value="238">CAPACITORS 33uF </option>
+              <option value="239">CAPACITORS 47uF </option>
+              <option value="240">CAPACITORS 68u </option>
+              <option value="241">CAPACITORS 100uF </option>
+              <option value="242">CAPACITORS 150uF </option>
+              <option value="243">CAPACITORS 220uF </option>
+              <option value="244">CAPACITORS 330uF </option>
+              <option value="245">CAPACITORS 470F </option>
+              <option value="246">CAPACITORS 680uF </option>
+              <option value="247">CAPACITORS 1000uF </option>
+              <option value="248">CAPACITORS 2200uF </option>
+              <option value="">IC'S </option>
+              <option value="250">IC's 74LS00 </option>
+              <option value="251">IC's 74LS01 </option>
+              <option value="252">IC's 74LS02 </option>
+              <option value="253">IC's 74LS03 </option>
+              <option value="254">IC'S 74LS04 </option>
+              <option value="255">IC'S 74LS05 </option>
+              <option value="256">IC'S 74LS06</option>
+              <option value="257">IC'S 74LS08</option>
+              <option value="258">IC'S 74LS10</option>
+              <option value="259">IC'S 74LS100</option>
+              <option value="260">IC'S 74LS104</option>
+              <option value="261">IC'S 74LS107</option>
+              <option value="262">IC'S 74LS11</option>
+              <option value="263">IC'S 74LS110</option>
+              <option value="264">IC'S 74LS121</option>
+              <option value="265">IC'S 74LS123</option>
+              <option value="266">IC'S 74LS124</option>
+              <option value="267">IC'S 74LS125</option>
+              <option value="268">IC'S 74LS13</option>
+              <option value="269">IC'S 74LS138</option>
+              <option value="270">IC'S 74LS14</option>
+              <option value="271">IC'S 74LS150</option>
+              <option value="272">IC'S 74LS151</option>
+              <option value="273">IC'S 74LS153</option>
+              <option value="274">IC'S 74LS154</option>
+              <option value="275">IC'S 74LS157</option>
+              <option value="276">IC'S 74LS16</option>
+              <option value="277">IC'S 74LS160</option>
+              <option value="278">IC'S 74LS161</option>
+              <option value="279">IC'S 74LS162</option>
+              <option value="280">IC'S 74LS163</option>
+              <option value="281">IC'S 74LS165</option>
+              <option value="282">IC'S 74LS18</option>
+              <option value="283">IC'S 74LS181</option>
+              <option value="284">IC'S 74LS182</option>
+              <option value="285">IC'S 74LS190</option>
+              <option value="286">IC'S 74LS191</option>
+              <option value="287">IC'S 74LS192</option>
+              <option value="288">IC'S 74LS194</option>
+              <option value="289">IC'S 74LS195</option>
+              <option value="290">IC'S 74LS196</option>
+              <option value="291">IC'S 74LS197</option>
+              <option value="292">IC'S 74LS20</option>
+              <option value="293">IC'S 74LS244</option>
+              <option value="294">IC'S 74LS30</option>
+              <option value="295">IC'S 74LS32</option>
+              <option value="296">IC'S 74LS38</option>
+              <option value="297">IC'S 74LS393</option>
+              <option value="298">IC'S 74LS40</option>
+              <option value="299">IC'S 74LS42</option>
+              <option value="300">IC'S 74LS46</option>
+              <option value="301">IC'S 74LS47</option>
+              <option value="302">IC'S 74LS48</option>
+              <option value="303">IC'S 74LS51</option>
+              <option value="304">IC'S 74LS52</option>
+              <option value="305">IC'S 74LS53</option>
+              <option value="306">IC'S 74LS54</option>
+              <option value="307">IC'S 74LS72</option>
+              <option value="308">IC'S 74LS73</option>
+              <option value="309">IC'S 74LS74</option>
+              <option value="310">IC'S 74LS75</option>
+              <option value="311">IC'S 74LS76</option>
+              <option value="312">IC'S 74LS81</option>
+              <option value="313">IC'S 74LS82</option>
+              <option value="314">IC'S 74LS83</option>
+              <option value="315">IC'S 74LS85</option>
+              <option value="316">IC'S 74LS86</option>
+              <option value="317">IC'S 74LS90</option>
+              <option value="318">IC'S 74LS91</option>
+              <option value="319">IC'S 74LS92</option>
+              <option value="320">IC'S 74LS93</option>
+              <option value="321">IC'S 74LS94</option>
+              <option value="322">IC'S ADS0804</option>
+              <option value="323">IC'S CA3046</option>
+              <option value="324">IC'S CA3130</option>
+              <option value="325">IC'S CD4000CN</option>
+              <option value="326">IC'S CD40106</option>
+              <option value="327">IC'S CD4011</option>
+              <option value="328">IC'S CD4013</option>
+              <option value="329">IC'S CD4017</option>
+              <option value="330">IC'S CD4039</option>
+              <option value="331">IC'S CD4046</option>
+              <option value="332">IC'S CD4093</option>
+              <option value="333">IC'S CD4116</option>
+              <option value="334">IC'S CD40106</option>
+              <option value="335">IC'S DAC0800</option>
+              <option value="336">IC'S GALL 6V8</option>
+              <option value="337">IC'S HD6321</option>
+              <option value="338">IC'S L200CV</option>
+              <option value="339">IC'S ICL7106 DMM CHIP</option>
+              <option value="340">IC'S LM301AN</option>
+              <option value="341">IC'S LM324</option>
+              <option value="342">IC'S LM358</option>
+              <option value="343">IC'S LM386</option>
+              <option value="344">IC'S LM3900</option>
+              <option value="345">IC'S LM555</option>
+              <option value="346">IC'S LM556</option>
+              <option value="347">IC'S LM565</option>
+              <option value="348">IC'S LM566</option>
+              <option value="349">IC'S LM567</option>
+              <option value="350">IC'S LM741</option>
+              <option value="351">IC'S LM747</option>
+              <option value="352">IC'S LM7660</option>
+              <option value="353">IC'S MIC29152BT</option>
+              <option value="354">IC'S PIC 16F84</option>
+              <option value="355">IC'S SG3524</option>
+              <option value="356">IC'S ST232</option>
+              <option value="357">IC'S TL071</option>
+              <option value="358">IC'S TL072</option>
+              <option value="">RESISTORS</option>
+              <option value="359">RESISTORS 1% 1/4W 5 UNIT</option>
+              <option value="360">RESISTORS 10W</option>
+              <option value="361">RESISTORS 330R IC</option>
+              <option value="362">RESISTORS 5% 1/4W 5 UNIT</option>
+              <option value="363">RESISTORS 5% 1/2W 5 UNIT</option>
+              <option value="364">RESISTORS 5W</option>
+              <option value="365">RESISTORS POTS</option>
+              <option value="366">RESISTORS THERMISTOR 4K7</option>
+              <option value="">OPTOCOUPLES</option>
+              <option value="367">OPTOCOUPLES 4N26</option>
+              <option value="368">OPTOCOUPLES 4N27</option>
+              <option value="369">OPTOCOUPLES 4N28</option>
+              <option value="">IC SOCKETS</option>
+              <option value="370">IC SOCKETS 8 PIN DIP</option>
+              <option value="371">IC SOCKETS 14PIN DIP</option>
+              <option value="372">IC SOCKETS 16PIN DIP</option>
+              <option value="373">IC SOCKETS 18PIN DIP</option>
+              <option value="374">IC SOCKETS 20PIN DIP</option>
+              <option value="375">IC SOCKETS 22PIN DIP</option>
+              <option value="376">IC SOCKETS 24PIN DIP</option>
+              <option value="377">IC SOCKETS 28PIN DIP</option>
+              <option value="378">IC SOCKETS 40PIN DIP</option>
+              <option value="379">SPEAKERS 1W 80HM</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </select>
+
+          </form>
+
+
+
+</div>
+    </nav>
+      <main style="text-align:left;">
+
+        <div id="txtHint">components info will be listed here...</div>
+
+        </main>
+        <footer>
+          <nav style="height:60px" class="navbar navbar-expand-sm bg-success  fixed-bottom">
+
+            <div style="float:center;" class="custom"  >
+
+  <ul  class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.facebook.com/cput.ac.za/"><i style="font-size:30px;color:white" class="fa">&#xf230;</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://twitter.com/cput?lang=en"><i style="font-size:30px;color:white" class="fa">&#xf081;</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.instagram.com/accounts/login/"><i style="font-size:24px;color:white;" class="fa">&#xf16d;</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href=""><i style="font-size:12px;color:white;" class="fa">&#xf1f9;</i> Designed by clovis Muleba</a>
+    </li>
+  </ul>
+</div>
+
+</nav>
+          </footer>
+
+  </body>
+</html>

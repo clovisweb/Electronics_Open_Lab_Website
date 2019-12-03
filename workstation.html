@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Booking workstation</title>
+    script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+      body{
+        background-color: black;
+      }
+      main{
+        background-color:grey;
+      }
+      a{
+        color:white;
+      }
+      form{
+        background-color:white;
+      }
+      input{
+        background-color:lightgreen;
+      }
+      textarea{
+        background-color: lightgreen;
+      }
+      label{
+        color:green;
+      }
+
+       </style>
+  </head>
+  <body>
+    <header>
+
+<nav style="height:" class="navbar bg-success ">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="https://www.cput.ac.za/">
+    <img src="CPUT3.png" alt="logo" style="width:200px;">
+  </a>
+  <div style="float:right;" class="input-group-text" action="/action_page.php">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit"><i class="material-icons" style="font-size:15px;">search</i></button>
+  </div>
+</nav>
+
+  <!-- Links -->
+  <nav style="margin-top:2px;margin-bottom:2px;height:22px;" class="navbar navbar-expand-sm bg-success  ">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a style="color:;"  class="nav-link" href="index.html"><i class="material-icons">&#xe88a;</i></a>
+    </li>
+    <li class="nav-item">
+      <a style="color:;" class="nav-link" href="about.html">About</a>
+    </li>
+    <li class="nav-item">
+      <a style="color:;" class="nav-link" href="contactus.html">Contact</a>
+    </li>
+    <li class="nav-item">
+      <a style="color:;" class="nav-link" href="Serviceweb.html">Services</a>
+    </li>
+    <li class="nav-item">
+      <a style="color:;" class="nav-link" href="https://www.cput.ac.za/">CPUT WebSite</a>
+    </li>
+  </ul>
+
+</nav>
+      </header>
+      <main>
+  <h1 style="background-color:lightgreen;color:white;text-align:center;">  BOOK A WORKSTATION </h1>
+  <section>
+    <div class="row">
+      <!--FIRST COLUMN -->
+  <div class="col-sm" style="text-align:center;">
+    <div class="main">
+		<div class="info" style="color:white;"><a>Make a Booking Here</a></div>
+		<form action="mail_handler.php" method="post" name="form" class="form-box">
+			<label for="name">Name</label><br>
+			<input type="text" name="name" class="inp" placeholder="Enter Your Name" required><br>
+			<label for="email">Email address</label><br>
+			<input type="email" name="email" class="inp" placeholder="Enter Your Email" required><br>
+			<label for="phone">Student Number</label><br>
+			<input type="tel" name="phone" class="inp" placeholder="Enter Your student number" required><br>
+			<label for="message">Workstation</label><br>
+			<textarea name="msg" class="msg-box" placeholder="Enter Your workstation Here..." required></textarea><br>
+			<input type="submit" name="submit" value="Send" class="sub-btn">
+		</form>
+	</div>
+  </div>
+  <!--SECOND COLUNM-->
+  <div class="col-sm" style="">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+     <!-- Indicators -->
+     <ul class="carousel-indicators">
+       <li data-target="#demo" data-slide-to="0" class="active"></li>
+       <li data-target="#demo" data-slide-to="1"></li>
+       <li data-target="#demo" data-slide-to="2"></li>
+     </ul>
+
+     <!-- The slideshow -->
+     <div class="carousel-inner">
+
+       <div class="carousel-item active">
+         <img style="border-radius: ; opacity:0.9" src="scope.png" alt="picture1" width="1000" height="490">
+         <div class="carousel-caption">
+
+       </div>
+       </div>
+       <div class="carousel-item">
+         <img style="border-radius: ; opacity:0.9" src="scope2.jpg" alt="picture2" width="1000" height="490">
+
+       </div>
+       <div class="carousel-item">
+         <img style="border-radius: ; opacity:0.9" src="scope3.jpeg" alt="picture3" width="800" height="400">
+
+       </div>
+       <div class="carousel-item">
+         <img style="border-radius: ; opacity:0.9" src="scope4.jpg" alt="picture4" width="1000" height="490">
+
+       </div>
+       <div class="carousel-item">
+         <img style="border-radius: ; opacity:0.9" src="granger_bay.jpg" alt="picture5" width="1000" height="490">
+
+       </div>
+       <div class="carousel-item">
+         <img style="border-radius: ; opacity:0.9" src="mowbray.jpg" alt="picture5" width="1000" height="490">
+
+       </div>
+       <div class="carousel-item">
+         <img style="border-radius: ; opacity:0.9" src="wellington.jpg" alt="picture5" width="1000" height="490">
+
+       </div>
+
+     </div>
+
+     <!-- Left and right controls -->
+     <a class="carousel-control-prev" href="#demo" data-slide="prev">
+       <span class="carousel-control-prev-icon"></span>
+     </a>
+     <a class="carousel-control-next" href="#demo" data-slide="next">
+       <span class="carousel-control-next-icon"></span>
+     </a>
+   </div>
+
+ </div>
+</br>
+
+
+   </section>
+        </main>
+      <footer>
+        <nav style="height:60px" class="navbar navbar-expand-sm bg-success  fixed-bottom">
+
+          <div style="float:center;" class="custom"  >
+
+<ul  class="navbar-nav">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.facebook.com/cput.ac.za/"><i style="font-size:30px;color:white" class="fa">&#xf230;</i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/cput?lang=en"><i style="font-size:30px;color:white" class="fa">&#xf081;</i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.instagram.com/accounts/login/"><i style="font-size:24px;color:white;" class="fa">&#xf16d;</i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href=""><i style="font-size:12px;color:;" class="fa">&#xf1f9;</i> Designed by clovis Muleba</a>
+  </li>
+</ul>
+</div>
+
+</nav>
+
+        </footer>
+
+  </body>
+</html>
